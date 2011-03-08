@@ -1,8 +1,8 @@
 class CreateEntries < ActiveRecord::Migration
   def self.up
     create_table :entries do |t|
-      t.references :event
-      t.references :member
+      t.integer :event_id
+      t.integer :member_id
 
       t.timestamps
     end
