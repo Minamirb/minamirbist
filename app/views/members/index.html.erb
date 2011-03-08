@@ -23,7 +23,7 @@
     <td><%= member.blog %></td>
     <td><%= member.birthday %></td>
     <td><%= member.pr %></td>
-    <td><%= link_to 'Show', member %></td>
+    <td><%= button_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>
     <td><%= link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -32,4 +32,4 @@
 
 <br />
 
-<%= link_to 'New Member', new_member_path %>
+
