@@ -1,0 +1,86 @@
+
+body {
+	font-size: 10pt;
+	font-family: Tahoma,sans-serif;
+	color: black;
+	text-align: center;
+	background: #f4f5f0;
+}
+
+/* content wrapper */
+
+#wrap {
+	width: 300px;
+	margin:-150px 0 0 -200px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	text-align:left;
+	background: url(/images/pakira.gif) no-repeat right bottom;
+}
+
+/* title */
+
+#title {
+	padding-top: 0px;
+	margin-left: 0px;
+	text-align: left;
+	color: #ff8040;
+	height: 30px;
+	background: transparent;
+}
+#title h1 {
+	font-size: 20pt;
+	font-weight: normal;
+	margin: 0;
+}
+#title a, a :visited {
+	text-decoration: none;
+	color: #ff8040;
+	background: transparent;
+}
+#title a:hover, a:visited:hover {
+	color: #ff723f;
+	text-decoration: none;
+	background: transparent;
+}
+
+/* main content */
+
+#content {
+        padding: 15px 0 25px 0;
+        margin: 20px;
+	color: #07294b;
+	background: transparent;
+}
+
+
+/* bottom stuff (copyright message, etc) */
+
+#bottom {
+	font-size: 8pt;
+	color: #595d8e;
+	line-height: 0.5em;
+}
+
+#bottom a {
+	color: #5994bc;
+}
+
+#bottom a:hover {
+	text-decoration: underline;
+}
+
+#bottom img {
+	margin: 5px;
+	border: 0;
+}
+
+
+/* hyperlinks */
+
+a {
+	text-decoration: none;
+	color: #1267bc;
+	background: transparent;
+}

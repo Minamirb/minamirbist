@@ -1,0 +1,198 @@
+/* 'A Leaf' CSS - http://gregdev.net */
+
+body {
+	font-size: 10pt;
+	font-family: Tahoma,sans-serif;
+	color: black;
+	text-align: center;
+	background: #f4f5f0;
+}
+
+/* content wrapper */
+
+#wrap {
+	color: #303030;
+	margin: 0 auto;
+	width: 810px;
+	background: url(/images/nitizyou4.gif) no-repeat right bottom;
+}
+
+/* title */
+
+#title {
+	padding-top: 20px;
+	margin-left: 20px;
+	text-align: left;
+	color: #ff8040;
+	height: 100px;
+	background: transparent;
+}
+#title h1 {
+	font-size: 60pt;
+	font-weight: normal;
+	margin: 0;
+}
+#title a, a :visited {
+	color: #ff8040;
+	background: transparent;
+}
+#title a:hover, a:visited:hover {
+	color: #ff723f;
+	text-decoration: none;
+	background: transparent;
+}
+
+/* main content */
+
+#content {
+	margin: 10px 0 0 5px;
+	padding: 7px;
+	line-height: 1.8em;
+	text-align: justify;
+	width: 550px;
+	color: #07294b;
+	height: 450px;
+	background: transparent;
+        overflow: auto;
+}
+
+h1 {
+	font-size: 16pt;
+	color: #316424;
+	background: transparent;
+}
+h2 {
+	font-size: 12pt;
+	color: #316424;
+	background: transparent;
+}
+
+.quote {
+	color: #000;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	background: #b3d686;
+	width: 500px;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+/* side menu */
+
+#side {
+	line-height: 1.8em;
+	width: 120px;
+	color: #000000;
+	float: right;
+	text-align: right;
+	font-size: 9pt;
+}
+
+#side ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.item {
+	color: #000000;
+	font-size: 0.9em;
+	display: block;
+	background: #a6cca1;
+	border: blue 1px solid;
+	margin: 10px 5px 5px 5px;
+	padding-right: 2px;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	width: 95px;
+	text-transform: uppercase;
+}
+
+.item:hover {
+	background: #f0b600;
+	text-decoration: none;
+}
+
+.itemsub{
+	color: black;
+	font-size: 0.8em;
+	display: block;
+	background: #a6da87;
+	border: blue 1px solid;
+	margin: 5px 5px 0px 15px;
+	padding-right: 2px;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	width: 85px;
+}
+
+.itemsub:hover {
+	background: #f0d307;
+	text-decoration: none;
+}
+
+/* image footer */
+
+#footer {
+	width: 750px;
+	height: 23px;
+}
+
+/* bottom stuff (copyright message, etc) */
+
+#bottom {
+	font-size: 8pt;
+	padding: 15px;
+	color: #595d8e;
+	line-height: 0.5em;
+	background: transparent;
+}
+
+#bottom a {
+	color: #5994bc;
+	text-decoration: none;
+	background: transparent;
+}
+
+#bottom a:hover {
+	text-decoration: underline;
+	background: transparent;
+}
+
+#bottom img {
+	margin: 5px;
+	border: 0;
+}
+
+/* hyperlinks */
+
+a {
+	text-decoration: none;
+	color: #1267bc;
+	background: transparent;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: black;
+	background: transparent;
+}
+
+/* tables */
+
+table {
+	text-align: left;
+	font-size: 1em;
+	color: #274343;
+}
+
+td {
+	padding: 0;
+}
+
+/* input */
+
+input {
+	border: 1px solid #f0b600;
+	background: #c3f1c4;
+}
