@@ -1,25 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Date on:</b>
+  <b>日付:</b>
   <%= @event.date_on %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b>名称:</b>
   <%= @event.name %>
 </p>
 
 <p>
-  <b>Place:</b>
+  <b>場所:</b>
   <%= @event.place %>
 </p>
 
 <p>
-  <b>Contents:</b>
+  <b>やること:</b>
   <%= @event.contents %>
 </p>
 
+<%= button_to "参加する", new_event_entry_path(@event), :method => :get  %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+<br/>
+<div>参加者リスト</div>
+<table>
+  <tr><th>No.</th><th>名前</th><th>登録日時</th>
+  <% @event.entries.each_with_index do |entry, i| %>
+    <tr>
+      <td><%= i + 1 %></td>
+      <td><%= entry.member.name %></td>
+      <td><%= entry.created_at %></td>
+      <td><%= button_to "キャンセル", entry_path(entry), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

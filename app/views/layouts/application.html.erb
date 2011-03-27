@@ -13,33 +13,39 @@ Please leave the 'designed by' link intact and visible; that's all I ask!
 <body>
 
 <div id="wrap">
-<div id="title">
-	<h1><a href="#">Minamirbist</a></h1>
-</div>
-<div id="side">
-	<ul>
-		<li><a class="item" href="/members">Member</a></li>
-			<li><a class="itemsub" href="/members/new">new member</a></li>
-		<li><a class="item" href="/events">Event</a></li>
-			<li><a class="itemsub" href="/events/new">new event</a></li>
-		<li><a class="item" href="/agreement">agreement</a></li>
-			<li><a class="itemsub" href="#">log in</a></li>
-			<li><a class="itemsub" href="#">log out</a></li>
-	</ul>
-</div>
-<div id="content">
+  <div id="title">
+    <h1><a href="#">Minamirbist</a></h1>
+  </div>
+  
+  <div id="side">
+    <ul>
+      <li><a class="item"    href=<%= members_path %>>Member</a></li>
+      <li><a class="itemsub" href=<%= new_member_path %>>new member</a></li>
+      <li><a class="item"    href=<%= events_path %>>Event</a></li>
+      <li><a class="itemsub" href=<%= new_event_path %>>new event</a></li>
+      <li><a class="item"    href=<%= agreement_path %>>agreement</a></li>
+      <li><a class="itemsub" href="#">log in</a></li>
+      <li><a class="itemsub" href="#">log out</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
     <%= yield %>
+  </div>
+
+  <div id="footer"></div>
 </div>
-<div id="footer"></div>
-</div>
+
 <div id="bottom">
-	<p><a href="http://qwik.jp/minamirb/FrontPage.html">&copy; 2010 Minami.rb</p>
-	<p><a href="http://gregdev.net">Origial designed by Greg Smith</a></p>
-	<p><a href="http://shimizumari.com/fuwa2li">Matelial is from ふわふわ。り</a></p>
+  <p><a href="http://qwik.jp/minamirb/FrontPage.html">&copy; 2010 Minami.rb</p>
+  <p><a href="http://gregdev.net">Origial designed by Greg Smith</a></p>
+  <p><a href="http://shimizumari.com/fuwa2li">Matelial is from ふわふわ。り</a></p>
 </div>
 
 <div style="font-size: 0.8em; text-align: center; margin-top: 1.0em; margin-bottom: 1.0em;">
-Design downloaded from <a href="http://www.freewebtemplates.com/">Free Templates</a> - your source for free web templates
+  Design downloaded from
+  <a href="http://www.freewebtemplates.com/">Free Templates</a>
+  - your source for free web templates
 </div>
 </body>
 </html>

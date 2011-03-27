@@ -2,12 +2,12 @@ Minamirbist::Application.routes.draw do
 
   root :to => "welcome#index"
   match 'agreement' =>'agreement#index'
-  resources :entries 
- 
 
   resources :events do
-      resources :entries  
-  end 
+    resources :entries
+  end
+
+  resources :entries
 
   resources :members
 
