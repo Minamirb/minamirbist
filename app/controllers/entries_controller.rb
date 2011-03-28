@@ -24,8 +24,10 @@ class EntriesController < ApplicationController
   # GET /entries/new
   # GET /entries/new.xml
   def new
+
     @entry = Entry.new
     @event = Event.find(params[:event_id])
+    p @event
     @members = Member.find(:all)
     respond_to do |format|
       format.html # new.html.erb
@@ -44,10 +46,16 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
     @entry.event_id = params[:event_id]
     @entry.member_id = params[:entry][:member_id]
-    if @entry.save
-      redirect_to event_path(Event.find params[:event_id])
-      return
+    @entry.save
+    if @entry.errors.any?
+      flash[:notice] = @entry.errors.full_messages.inject do |result, msg|
+        result += msg
+      end
     end
+
+    redirect_to event_path(Event.find params[:event_id])
+    return
+
     respond_to do |format|
       if @entry.save
         format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
