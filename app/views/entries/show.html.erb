@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Event:</b>
+  <b>イベント</b>
   <%= @entry.event_id %>
 </p>
 
 <p>
-  <b>Member:</b>
+  <b>メンバー</b>
   <%= @entry.member_id %>
 </p>
 
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to '修正', edit_entry_path(@entry) %> |
+<%= link_to '戻る', entries_path %>

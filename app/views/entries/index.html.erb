@@ -1,9 +1,9 @@
-<h1>Listing entries</h1>
+<h1>エントリー 一覧</h1>
 
 <table>
   <tr>
-    <th>Event</th>
-    <th>Member</th>
+    <th>イベント</th>
+    <th>メンバー</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= entry.event_id %></td>
     <td><%= entry.member_id %></td>
-    <td><%= link_to 'Show', entry ,:method => :get %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to '確認', entry ,:method => :get %></td>
+    <td><%= link_to '修正', edit_entry_path(entry) %></td>
+    <td><%= link_to '削除', entry, :confirm => '削除してもよろしいですか?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Entry', new_entry_path %>
+<%= link_to '新規登録', new_entry_path %>

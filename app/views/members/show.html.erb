@@ -1,40 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>名前</b>
   <%= @member.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>住所</b>
   <%= @member.address %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>E-Mail</b>
   <%= @member.email %>
 </p>
 
 <p>
-  <b>Twitter:</b>
+  <b>Twitter</b>
   <%= @member.twitter_id %>
 </p>
 
 <p>
-  <b>Blog:</b>
+  <b>ブログURL</b>
   <%= @member.blog %>
 </p>
 
 <p>
-  <b>Birthday:</b>
+  <b>誕生日</b>
   <%= @member.birthday %>
 </p>
 
 <p>
-  <b>Pr:</b>
+  <b>自己紹介</b>
   <%= @member.pr %>
 </p>
 
 
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
+<%= link_to '修正', edit_member_path(@member) %> |
+<%= link_to '戻る', members_path %>
