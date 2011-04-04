@@ -1,4 +1,15 @@
 class EntriesController < ApplicationController
+  private
+  before_filter :only => [:new, :create] do |controller|
+    @entry = Entry.new(params[:entry])
+    unless params[:event_id].blank? 
+      @entry.event_id = params[:event_id]
+      @event = @entry.event
+    end
+    @members = Member.all
+  end
+
+  public
   # GET /entries
   # GET /entries.xml
   def index
@@ -24,11 +35,6 @@ class EntriesController < ApplicationController
   # GET /entries/new
   # GET /entries/new.xml
   def new
-
-    @entry = Entry.new
-    @event = Event.find(params[:event_id])
-    p @event
-    @members = Member.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @entry }
@@ -43,22 +49,10 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
-    @entry = Entry.new(params[:entry])
-    @entry.event_id = params[:event_id]
     @entry.member_id = params[:entry][:member_id]
-    @entry.save
-    if @entry.errors.any?
-      flash[:notice] = @entry.errors.full_messages.inject do |result, msg|
-        result += msg
-      end
-    end
-
-    redirect_to event_path(Event.find params[:event_id])
-    return
-
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
+        format.html { redirect_to(@entry.event, :notice => 'Entry was successfully created.') }
         format.xml  { render :xml => @entry, :status => :created, :location => @entry }
       else
         format.html { render :action => "new" }
@@ -87,13 +81,10 @@ class EntriesController < ApplicationController
   # DELETE /entries/1.xml
   def destroy
     @entry = Entry.find(params[:id])
-    event_id = @entry.event_id
-    if @entry.destroy
-      redirect_to event_path(Event.find event_id)
-      return
-    end
+    @entry.destroy
     respond_to do |format|
-      format.html { redirect_to(entries_url) }
+      # TODO もう少し格好良くしたい
+      format.html { redirect_to params[:event_id].blank? ? member_path(params[:member_id]) : event_path(params[:event_id]) }
       format.xml  { head :ok }
     end
   end

@@ -2,6 +2,5 @@
 class Entry < ActiveRecord::Base
   belongs_to :member
   belongs_to :event
-  validates_uniqueness_of :event_id, :member_id,
-                          :on => :create, :message => '既に登録済です。'
+  validates_uniqueness_of :event_id, :member_id, :on => :create
 end

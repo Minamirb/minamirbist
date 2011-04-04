@@ -35,6 +35,22 @@
   <%= @member.pr %>
 </p>
 
+<div>参加イベントリスト</div>
+<% unless @member.events.blank? -%>
+<table>
+  <tr><th>No.</th><th>名前</th><th>登録日時</th>
+  <% @member.entries.each_with_index do |entry, i| %>
+    <tr>
+      <td><%= i + 1 %></td>
+      <td><%= entry.event.name %></td>
+      <td><%= l(entry.event.date_on) %></td>
+      <td><%= button_to "キャンセル", {:controller => :entries, :action => :destroy, :member_id => params[:id], :id => entry}, :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<% else -%>
+<p class="notice">現在参加しているイベントはありません。</p>
+<% end -%>
 
 <%= link_to '修正', edit_member_path(@member) %> |
 <%= link_to '戻る', members_path %>
