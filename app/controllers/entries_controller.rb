@@ -24,11 +24,10 @@ class EntriesController < ApplicationController
   # GET /entries/new
   # GET /entries/new.xml
   def new
-
     @entry = Entry.new
     @event = Event.find(params[:event_id])
-    p @event
     @members = Member.find(:all)
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @entry }
@@ -38,6 +37,8 @@ class EntriesController < ApplicationController
   # GET /entries/1/edit
   def edit
     @entry = Entry.find(params[:id])
+    @event = Event.find(params[:event_id])
+    @members = Member.find(:all)
   end
 
   # POST /entries

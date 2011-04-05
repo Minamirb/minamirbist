@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   name: MyString
   address: MyString
   email: MyString
@@ -10,6 +11,7 @@ one:
   pr: MyString
 
 two:
+  id: 2
   name: MyString
   address: MyString
   email: MyString
@@ -17,3 +19,23 @@ two:
   blog: MyString
   birthday: 2011-02-17
   pr: MyString
+
+atakig:
+  id: 3
+  name: たきぐち
+  address: 大阪市内
+  email: atakig@minami.rb
+  twitter_id: atakig
+  blog: secret
+  birthday: 2011-02-17
+  pr: love ruby, emacs and mac
+
+two:
+  id: 4
+  name: よしだあつし
+  address: 吹田市
+  email: yalab@minami.rb
+  twitter_id: yalab
+  blog: yalab.com
+  birthday: 2011-02-17
+  pr: Rails Enginear

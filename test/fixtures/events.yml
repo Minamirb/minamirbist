@@ -1,13 +1,27 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   date_on: 2011-02-17
   name: MyString
   place: MyString
   contents: MyString
 
 two:
+  id: 2
   date_on: 2011-02-17
   name: MyString
   place: MyString
   contents: MyString
+
+fifth:
+  date_on: 2011-02-26
+  name: 第5回勉強会
+  place: 浪速区民会館
+  contents: Webデザイン
+
+sixth:
+  date_on: 2011-03-26
+  name: 第6回勉強会
+  place: 中央会館
+  contents: JQuery

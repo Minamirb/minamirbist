@@ -5,5 +5,6 @@ one:
   member_id: 1
 
 two:
-  event_id: 1
-  member_id: 1
+  event_id: 2
+  member_id: 2
+

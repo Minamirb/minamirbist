@@ -12,16 +12,16 @@ class EntriesControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, :event_id => events(:fifth).id
     assert_response :success
   end
 
   test "should create entry" do
     assert_difference('Entry.count') do
-      post :create, :entry => @entry.attributes
+      post :create, :entry => @entry.attributes, :event_id => entries(:two).event_id
     end
 
-    assert_redirected_to entry_path(assigns(:entry))
+    assert_redirected_to event_path Event.find(entries(:two).event_id)
   end
 
   test "should show entry" do
@@ -30,7 +30,7 @@ class EntriesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, :id => @entry.to_param
+    get :edit, :id => @entry.to_param, :event_id => @entry.event_id
     assert_response :success
   end
 
@@ -44,6 +44,6 @@ class EntriesControllerTest < ActionController::TestCase
       delete :destroy, :id => @entry.to_param
     end
 
-    assert_redirected_to entries_path
+    assert_redirected_to event_path Event.find(@entry.event_id)
   end
 end
