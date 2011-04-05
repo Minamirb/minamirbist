@@ -44,6 +44,8 @@ class EntriesController < ApplicationController
   # GET /entries/1/edit
   def edit
     @entry = Entry.find(params[:id])
+    @event = Event.find(params[:event_id])
+    @members = Member.find(:all)
   end
 
   # POST /entries
