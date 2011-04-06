@@ -20,22 +20,22 @@ two:
   birthday: 2011-02-17
   pr: MyString
 
-atakig:
+three:
   id: 3
-  name: たきぐち
-  address: 大阪市内
-  email: atakig@minami.rb
-  twitter_id: atakig
+  name: hoge
+  address: Japan-Osaka
+  email: three@minami.rb
+  twitter_id: three
   blog: secret
   birthday: 2011-02-17
   pr: love ruby, emacs and mac
 
-two:
+four:
   id: 4
-  name: よしだあつし
-  address: 吹田市
-  email: yalab@minami.rb
-  twitter_id: yalab
-  blog: yalab.com
+  name: fuga
+  address: Japan-Osaka
+  email: four@minami.rb
+  twitter_id: four
+  blog: four.example.com
   birthday: 2011-02-17
   pr: Rails Enginear
