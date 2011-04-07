@@ -1,17 +1,13 @@
-<h1>Listing members</h1>
+<h1><%= page_title %></h1>
 
-<table>
+<table class="list">
   <tr>
-    <th>名前</th>
-    <th>住所</th>
-    <th>E-Mail</th>
-    <th>Twitter</th>
-    <th>ブログURL</th>
-    <th>誕生日</th>
-    <th>自己紹介</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <%- [:name, :address, :email, :twitter_id, :blog, :birthday, :pr].each do |c| -%>
+    <th><%= column_attr c %></th>
+    <%- end -%>
+    <th><br/></th>
+    <th><br/></th>
+    <th><br/></th>
   </tr>
 
 <% @members.each do |member| %>
@@ -23,9 +19,9 @@
     <td><%= member.blog %></td>
     <td><%= member.birthday %></td>
     <td><%= member.pr %></td>
-    <td><%= button_to '確認', member ,:method => :get %></td>
-    <td><%= link_to '修正', edit_member_path(member) %></td>
-    <td><%= link_to '削除', member, :confirm => '削除してもよろしいですか?', :method => :delete %></td>
+    <td><%= button_to t('nav.show'), member ,:method => :get %></td>
+    <td><%= link_to t('nav.edit'), edit_member_path(member) %></td>
+    <td><%= link_to t('nav.destroy'), member, :confirm => '削除してもよろしいですか?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

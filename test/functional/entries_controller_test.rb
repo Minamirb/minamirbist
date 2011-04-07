@@ -41,9 +41,9 @@ class EntriesControllerTest < ActionController::TestCase
 
   test "should destroy entry" do
     assert_difference('Entry.count', -1) do
-      delete :destroy, :id => @entry.to_param
+      delete :destroy, :id => @entry.to_param, :event_id => @entry.event
     end
 
-    assert_redirected_to event_path Event.find(@entry.event_id)
+    assert_redirected_to event_path @entry.event
   end
 end

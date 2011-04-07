@@ -231,3 +231,12 @@ p.notice {
   margin: 0;
   color: green;
 }
+
+table.list th {
+	text-align: center;
+}
+
+table.list th,
+table.list td {
+	padding: 0 2px;
+}

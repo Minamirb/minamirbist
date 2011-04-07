@@ -1,50 +1,55 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>名前</b>
+  <b><%= column_attr :name %></b>
   <%= @member.name %>
 </p>
 
 <p>
-  <b>住所</b>
+  <b><%= column_attr :address %></b>
   <%= @member.address %>
 </p>
 
 <p>
-  <b>E-Mail</b>
+  <b><%= column_attr :email %></b>
   <%= @member.email %>
 </p>
 
 <p>
-  <b>Twitter</b>
+  <b><%= column_attr :twitter_id %></b>
   <%= @member.twitter_id %>
 </p>
 
 <p>
-  <b>ブログURL</b>
+  <b><%= column_attr :blog %></b>
   <%= @member.blog %>
 </p>
 
 <p>
-  <b>誕生日</b>
+  <b><%= column_attr :birthday %></b>
   <%= @member.birthday %>
 </p>
 
 <p>
-  <b>自己紹介</b>
+  <b><%= column_attr :pr %></b>
   <%= @member.pr %>
 </p>
 
 <div>参加イベントリスト</div>
 <% unless @member.events.blank? -%>
-<table>
-  <tr><th>No.</th><th>名前</th><th>登録日時</th>
+<table class="list">
+  <tr>
+    <th>No.</th>
+    <th><%= column_attr :name, :event %></th>
+    <th><%= column_attr :date_on, :event %></th>
+    <th><br/></th>
+  </tr>
   <% @member.entries.each_with_index do |entry, i| %>
     <tr>
       <td><%= i + 1 %></td>
       <td><%= entry.event.name %></td>
       <td><%= l(entry.event.date_on) %></td>
-      <td><%= button_to "キャンセル", {:controller => :entries, :action => :destroy, :member_id => params[:id], :id => entry}, :method => :delete %></td>
+      <td><%= button_to t('nav.cancel'), {:controller => :entries, :action => :destroy, :member_id => params[:id], :id => entry}, :method => :delete %></td>
     </tr>
   <% end %>
 </table>
@@ -52,5 +57,5 @@
 <p class="notice">現在参加しているイベントはありません。</p>
 <% end -%>
 
-<%= link_to '修正', edit_member_path(@member) %> |
-<%= link_to '戻る', members_path %>
+<%= link_to t('nav.edit'), edit_member_path(@member) %> |
+<%= link_to t('nav.back'), members_path %>

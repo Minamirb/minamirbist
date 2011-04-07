@@ -186,8 +186,18 @@ ja:
 
       full_messages:
         format: "%{attribute}%{message}"
+
+    models:
+      entry: 'エントリー'
+      event: 'イベント'
+      member: 'メンバー'
+
     attributes:
+      default: &default_attributes
+        created_at: 登録日時
+        updated_at: 更新日時
       member:
+        <<: *default_attributes
         name: 名前
         address: 住所
         email:  E-Mail
@@ -196,10 +206,25 @@ ja:
         birthday: 誕生日
         pr:  自己紹介
       event:
-        date_on:  日時
+        <<: *default_attributes
+        date_on:  日付
         name: 名称
         place: 場所
         contents: 内容
-      entries:
+      entry:
+        <<: *default_attributes
         event_id: イベントID
         member_id:  メンバーID
+
+  titles:
+    index: '%{title} 一覧'
+    new: '%{title} 登録'
+    edit: '%{title} 修正'
+
+  nav:
+    show: '確認'
+    edit: '修正'
+    destroy: '削除'
+    entry: '参加する'
+    cancel: 'キャンセル'
+    back: '戻る'

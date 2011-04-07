@@ -6,6 +6,7 @@ Minamirbist::Application.routes.draw do
   resources :events do
     resources :entries, :only => [:new, :create, :destroy]
   end
+  resources :entries
 
   resources :members
   match 'members/:member_id/entries/:id' => 'entries#destroy', :via => :delete
