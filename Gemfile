@@ -31,3 +31,4 @@ gem 'sqlite3-ruby', '=1.3.2', :require => 'sqlite3'
 # end
 
 gem 'kaminari'
+gem 'devise'
