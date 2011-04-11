@@ -32,3 +32,4 @@ gem 'sqlite3-ruby', '=1.3.2', :require => 'sqlite3'
 
 gem 'kaminari'
 gem 'devise'
+gem 'jquery-rails'
