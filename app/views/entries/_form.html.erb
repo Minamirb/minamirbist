@@ -11,13 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :event %><br />
-    <%= @event.name  %>
-    <%= @event.date_on  %>
-  </div>
+  <p>
+    <b><%= "#{Event.model_name.human}#{column_attr :name, :event}" %></b>
+    <%= @event.name %>
+  </p>
 
- <div class="field">
+  <p>
+    <b><%= "#{Event.model_name.human}#{column_attr :date_on, :event}" %></b>
+    <%= l(@event.date_on) if @event.date_on.blank? %>
+  </p>
+
+  <div class="field">
     <%= f.label :member_id %><br />
     <%= f.select :member_id, @members.collect{|m| [m.name, m.id]} %>
   </div>

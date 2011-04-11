@@ -1,7 +1,7 @@
 module ApplicationHelper
   # ページタイトルを取得します
   # modelクラス名を省略した場合はcontroller名からmodelクラスを推測します
-  def page_title(model = controller_name, action = action_name)
+  def page_title(action = action_name, model = controller_name)
     I18n.t("titles.#{action}", :title => modelize(model).model_name.human)
   end
 

@@ -1,4 +1,4 @@
-<h1>イベント 一覧</h1>
+<h1><%= page_title %></h1>
 
 <table class="list">
   <tr>
@@ -13,12 +13,11 @@
 <% @events.each do |event| %>
   <tr>
     <td><%= event.date_on %></td>
-    <td><%= link_to event.name ,event_entries_path(event) %></td>
+    <td><%= link_to event.name ,event %></td>
     <td><%= event.place %></td>
-    <td><%= event.contents %></td>
-    <td><%= button_to t('nav.show'), event,:method => :get %></td>
-    <td><%= link_to t('nav.edit'), edit_event_path(event) %></td>
-    <td><%= link_to t('nav.destroy'), event, :confirm => '削除しますがよろしいですか?', :method => :delete %></td>
+    <td><%= truncate(event.contents, :length => 10) %></td>
+    <td><%= button_to t('nav.edit'), edit_event_path(event), :method => :get %></td>
+    <td><%= button_to t('nav.destroy'), event, :confirm => '削除しますがよろしいですか?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
