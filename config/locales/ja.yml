@@ -228,3 +228,9 @@ ja:
     entry: '参加する'
     cancel: 'キャンセル'
     back: '戻る'
+
+  views:
+    pagination:
+      previous: "&laquo; 前へ"
+      next: "次へ &raquo;"
+      truncate: "..."

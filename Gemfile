@@ -29,3 +29,5 @@ gem 'sqlite3-ruby', '=1.3.2', :require => 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'kaminari'
