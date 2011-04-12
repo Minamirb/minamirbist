@@ -12,15 +12,15 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should get index for pagination" do
-    25.times do |i|
+    5.times do |i|
       Event.create(:name => "event_#{i}")
     end
     get :index
     assert_response :success
-    assert_equal assigns(:events).size, 25
+    assert_equal assigns(:events).size, 5
 
     get :index, :page => 1
-    assert_equal assigns(:events).size, 25
+    assert_equal assigns(:events).size, 5
 
     get :index, :page => 2
     assert_equal assigns(:events).size, 4

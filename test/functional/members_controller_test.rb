@@ -12,14 +12,14 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should get index for pagination" do
-    25.times do |i|
+    5.times do |i|
       Member.create(:name => "member_#{i}")
     end
     get :index
-    assert_equal assigns(:members).size, 25
+    assert_equal assigns(:members).size, 5
 
     get :index, :page => 1
-    assert_equal assigns(:members).size, 25
+    assert_equal assigns(:members).size, 5
 
     get :index, :page => 2
     assert_equal assigns(:members).size, 4
