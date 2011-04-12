@@ -6,9 +6,9 @@ class EntriesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:entries)
+    assert_raises ActionController::RoutingError do
+      get :index
+    end
   end
 
   test "should get new" do
@@ -25,18 +25,21 @@ class EntriesControllerTest < ActionController::TestCase
   end
 
   test "should show entry" do
-    get :show, :id => @entry.to_param
-    assert_response :success
+    assert_raises ActionController::RoutingError do
+      get :show, :id => @entry.to_param
+    end
   end
 
   test "should get edit" do
-    get :edit, :id => @entry.to_param, :event_id => @entry.event_id
-    assert_response :success
+    assert_raises ActionController::RoutingError do
+      get :edit, :id => @entry.to_param, :event_id => @entry.event_id
+    end
   end
 
   test "should update entry" do
-    put :update, :id => @entry.to_param, :entry => @entry.attributes
-    assert_redirected_to entry_path(assigns(:entry))
+    assert_raises ActionController::RoutingError do
+      put :update, :id => @entry.to_param, :entry => @entry.attributes
+    end
   end
 
   test "should destroy entry" do
