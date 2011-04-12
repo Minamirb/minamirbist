@@ -12,7 +12,7 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.date_on %></td>
+    <td><%= l event.date_on unless event.date_on.blank? %></td>
     <td><%= link_to event.name ,event %></td>
     <td><%= event.place %></td>
     <td><%= truncate(event.contents, :length => 10) %></td>

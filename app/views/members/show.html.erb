@@ -27,7 +27,7 @@
 
 <p>
   <b><%= column_attr :birthday %></b>
-  <%= @member.birthday %>
+  <%= l @member.birthday unless @member.birthday.blank? %>
 </p>
 
 <p>

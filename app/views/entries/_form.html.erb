@@ -18,7 +18,7 @@
 
   <p>
     <b><%= "#{Event.model_name.human}#{column_attr :date_on, :event}" %></b>
-    <%= l(@event.date_on) if @event.date_on.blank? %>
+    <%= l(@event.date_on) unless @event.date_on.blank? %>
   </p>
 
   <div class="field">
