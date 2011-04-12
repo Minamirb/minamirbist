@@ -181,6 +181,7 @@ ja:
 
       messages:
         taken: "はすでに存在します。"
+        already_registed: "はすでに登録済です。"
         record_invalid: "バリデーションに失敗しました。 %{errors}"
         <<: *errors_messages
 
@@ -213,8 +214,8 @@ ja:
         contents: 内容
       entry:
         <<: *default_attributes
-        event_id: イベントID
-        member_id:  メンバーID
+        event_id: イベント
+        member_id:  メンバー
 
   titles:
     index: '%{title} 一覧'
