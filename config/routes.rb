@@ -4,12 +4,11 @@ Minamirbist::Application.routes.draw do
   match 'agreement' =>'agreement#index'
 
   resources :events do
-    resources :entries
+    resources :entries, :only => [:new, :create, :destroy]
   end
 
-  resources :entries
-
   resources :members
+  match 'members/:member_id/entries/:id' => 'entries#destroy', :via => :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

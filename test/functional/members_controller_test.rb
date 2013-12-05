@@ -11,6 +11,23 @@ class MembersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:members)
   end
 
+  test "should get index for pagination" do
+    5.times do |i|
+      Member.create(:name => "member_#{i}")
+    end
+    get :index
+    assert_equal assigns(:members).size, 5
+
+    get :index, :page => 1
+    assert_equal assigns(:members).size, 5
+
+    get :index, :page => 2
+    assert_equal assigns(:members).size, 4
+
+    get :index, :page => 3
+    assert_blank assigns(:members)
+  end
+
   test "should get new" do
     get :new
     assert_response :success

@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   def index
-    @members = Member.all
+    @members = Member.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

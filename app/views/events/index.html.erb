@@ -1,11 +1,10 @@
-<h1>イベント 一覧</h1>
+<h1><%= page_title %></h1>
 
-<table>
+<table class="list">
   <tr>
-    <th>日付</th>
-    <th>名称</th>
-    <th>場所</th>
-    <th>内容</th>
+    <%- [:date_on, :name, :place, :contents].each do |c| -%>
+    <th><%= column_attr c %></th>
+    <%- end -%>
     <th></th>
     <th></th>
     <th></th>
@@ -13,16 +12,16 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.date_on %></td>
-    <td><%= link_to event.name ,event_entries_path(event) %></td>
+    <td><%= l event.date_on unless event.date_on.blank? %></td>
+    <td><%= link_to event.name ,event %></td>
     <td><%= event.place %></td>
-    <td><%= event.contents %></td>
-    <td><%= button_to '確認', event,:method => :get %></td>
-    <td><%= link_to '修正', edit_event_path(event) %></td>
-    <td><%= link_to '削除', event, :confirm => '削除しますがよろしいですか?', :method => :delete %></td>
+    <td><%= truncate(event.contents, :length => 10) %></td>
+    <td><%= button_to t('nav.edit'), edit_event_path(event), :method => :get %></td>
+    <td><%= button_to t('nav.destroy'), event, :confirm => '削除しますがよろしいですか?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
+<%= paginate @events %>
 
 <br />
 
